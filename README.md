@@ -44,16 +44,15 @@ Next state of D flip-flop is always equal to data input, D for every positive tr
 
 **PROGRAM**
 ```
-module exp8(d,clk,rst,q);
-input d,clk,rst;
-output reg q;
-always @(negedge clk or posedge rst) begin 
-  if(rst) 
-     q <= 0; //Reset flip-flop
-  else 
-     q <= d; //d input is passed o Q on the negative cloge edge
-  end 
-endmodule 
+module D_FF(D,Clock,reset,Q);
+input D,Clock,reset;
+output reg Q;
+always @ (negedge Clock)
+if(!reset)
+     Q <= 0;
+	else
+      Q <= D;	
+ endmodule
 ```
 
 Developed by: JYOTSHANA S R
@@ -62,12 +61,14 @@ RegisterNumber: 212224230111
 
 
 **RTL LOGIC FOR FLIPFLOPS**
-![image](https://github.com/user-attachments/assets/f1fb40fd-2c6f-4d53-9be5-db1484fe4073)
+
+![326488033-665d8353-07b5-4268-92ae-53564c774be6](https://github.com/user-attachments/assets/d3d5237e-7e8b-470a-804a-165abb1e4d4a)
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
-![image](https://github.com/user-attachments/assets/12ed4178-a5d9-493f-a792-6a298d8a18fa)
+![326488271-1014a727-4453-4594-a441-aa99fb61f2a5](https://github.com/user-attachments/assets/ae1d648c-dfb9-4c11-8bf1-e23c645b6bb4)
+
 
 
 **RESULTS**
